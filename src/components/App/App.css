@@ -1,37 +1,37 @@
 *{
   box-sizing: border-box;
-  margin:0;
-  padding:0;
-  border:0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 nav{
-  background-color:#2d2825;
-  color:#517d59;
-  height:60px;
-  font-size:28px;
+  background-color: #2d2825;
+  color: #517d59;
+  height: 60px;
+  font-size: 28px;
   text-align: center;
   line-height: 60px;
 }
 
 main{
-  margin:20px;
-  border-bottom:5px solid black;
-  height:460px;
-  display:flex;
+  margin: 20px;
+  border-bottom: 5px solid black;
+  height: 460px;
+  display: flex;
   justify-content: center;
 }
 
 footer{
   font-size: 12px;
   text-align: center;
-  padding-bottom:10px;
+  padding-bottom: 10px;
 }
 
 footer button{
-  padding:10px;
-  margin-bottom:5px;
+  padding: 10px;
+  margin-bottom: 5px;
   background-color: #517d59;
-  color:white;
+  color: white;
   cursor: pointer;
 }

@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import './FloorSelector.css'
 
-class FloorSelector extends Component {
+class FloorSelector extends Component{
   
     renderFloorNumbers(){
-        //console.log(this.props.state)
         
         let allFloors=this.props.state.allFloors
+        
         let renderedFloors = allFloors.map(floor=>{
-            
             if(this.props.state.selectedFloors.includes(floor)){
                 return (
                     <button className='selectedFloor' key={floor} onClick={()=>this.handleFloorSelection(floor)}>{floor}</button>
@@ -17,19 +16,7 @@ class FloorSelector extends Component {
                 return (
                     <button key={floor} onClick={()=>this.handleFloorSelection(floor)}>{floor}</button>
                 )
-            }
-            
-            /*if(floor===this.props.state.currentFloor){
-                return (
-                    <p key={floor} onClick={()=>this.handleFloorSelection(floor)}>{floor}</p>
-                )
-            } else{
-                return (
-                    <p key={floor} onClick={()=>this.handleFloorSelection(floor)}>{floor}</p>
-                )
-            }*/
-        
-            
+            }            
         })
 
         return renderedFloors
@@ -44,17 +31,11 @@ class FloorSelector extends Component {
     }
 
     handleFloorSelection=(floor)=>{
-        //console.log('selected'+floor)
+        //don't let user select a floor if they're already at their selected floor
         if(this.props.state.currentFloor!==this.props.state.usersSelectedFloor){
             this.props.handleUserSelectsFloor(floor)
         }
-       
     }
-
-    /*componentDidUpdate(){
-        console.log(this.props.state.usersSelectedFloor)
-        console.log(this.props.state.selectedFloors)
-    }*/
 
     render(){
         return(
