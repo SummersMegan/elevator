@@ -26,7 +26,7 @@ class FloorTracker extends Component {
     } 
     
     renderFloorNumbers(){
-        console.log(this.props.state)
+        //console.log(this.props.state)
         
         /*let allFloors=this.props.state.allFloors
         let renderedFloors = allFloors.map(floor=>{
@@ -50,6 +50,7 @@ class FloorTracker extends Component {
 
     newRide=()=>{
         if(this.props.state.currentFloor===this.props.state.usersSelectedFloor){
+            
             return(
                 <>
                 <h3>This is your floor!</h3> 

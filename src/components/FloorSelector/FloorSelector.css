@@ -29,6 +29,7 @@
     background-color: #dadedf;
     color:#37301e;
     margin:5px;
+    cursor: pointer;
 }
 
 .selectedFloor{

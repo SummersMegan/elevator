@@ -4,7 +4,7 @@ import './FloorSelector.css'
 class FloorSelector extends Component {
   
     renderFloorNumbers(){
-        console.log(this.props.state)
+        //console.log(this.props.state)
         
         let allFloors=this.props.state.allFloors
         let renderedFloors = allFloors.map(floor=>{
@@ -36,7 +36,7 @@ class FloorSelector extends Component {
     }
   
     renderMessage=()=>{
-        if(this.props.state.currentFloor===1){
+        if(!this.props.state.usersSelectedFloor){
             return(
                 <h3>Please select a floor!</h3>
             )
@@ -44,17 +44,17 @@ class FloorSelector extends Component {
     }
 
     handleFloorSelection=(floor)=>{
-        console.log('selected'+floor)
+        //console.log('selected'+floor)
         if(this.props.state.currentFloor!==this.props.state.usersSelectedFloor){
             this.props.handleUserSelectsFloor(floor)
         }
        
     }
 
-    componentDidUpdate(){
+    /*componentDidUpdate(){
         console.log(this.props.state.usersSelectedFloor)
         console.log(this.props.state.selectedFloors)
-    }
+    }*/
 
     render(){
         return(

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import FloorSelector from '../FloorSelector/FloorSelector'
 import FloorTracker from '../FloorTracker/FloorTracker'
+import ElevatorMusic from '../../assets/elevator-music.mp3'
 
 class App extends Component {
   
@@ -10,6 +11,11 @@ class App extends Component {
     usersSelectedFloor:null,
     selectedFloors:[],
     currentFloor:1,
+  }
+
+  componentDidMount(){
+    var audio = new Audio(ElevatorMusic);
+    audio.play(); 
   }
 
   /*componentDidUpdate(){
@@ -29,10 +35,14 @@ class App extends Component {
   handleUserSelectsFloor=(floor)=>{
     //let currentSelectedFloors=this.state.selectedFloors.push(floor)
     //console.log(currentSelectedFloors)
-    this.setState(prevState=>({
-      usersSelectedFloor:floor,
-      selectedFloors:[...prevState.selectedFloors,floor]
-    }))
+    
+    if(floor!==this.state.usersSelectedFloor){
+      this.setState(prevState=>({
+        usersSelectedFloor:floor,
+        selectedFloors:[...prevState.selectedFloors,floor]
+      }))
+    }
+    
   }
 
   restartRide=()=>{
