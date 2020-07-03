@@ -20,19 +20,18 @@ class App extends Component {
       usersSelectedFloor:null,
       selectedFloors:[],
       currentFloor:1,
-      play: false,
-      pause: true,
+      play: false
     }
     this.audio = new Audio(ElevatorMusic);
   }
 
   playMusic = () => {
-    this.setState({ play: true, pause: false })
+    this.setState({ play: true })
       this.audio.play();
     }
     
   pauseMusic = () => {
-  this.setState({ play: false, pause: true })
+  this.setState({ play: false })
     this.audio.pause();
   }
 

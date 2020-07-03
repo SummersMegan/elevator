@@ -3,9 +3,9 @@ import './FloorTracker.css'
 
 class FloorTracker extends Component {
   
-    //prevents re-render when additional buttons are selected
+    //prevents re-render when additional buttons are selected or music turned on or off
     shouldComponentUpdate(nextProps, nextState) {
-        if (nextProps.state.selectedFloors.length===(this.props.state.selectedFloors.length+1) && nextProps.state.selectedFloors.length>1) {
+        if (nextProps.state.selectedFloors.length===(this.props.state.selectedFloors.length+1) && nextProps.state.selectedFloors.length>1 || nextProps.state.play !== this.props.state.play) {
           return false;
         } else {
           return true;
