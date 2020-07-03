@@ -1,0 +1,9 @@
+.floorTrackerContainer p{
+    border:1px solid red;
+    display:inline;
+    padding:10px;
+}
+
+.currentFloor{
+    background-color: yellow;
+}
