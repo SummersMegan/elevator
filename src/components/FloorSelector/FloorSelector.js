@@ -45,7 +45,10 @@ class FloorSelector extends Component {
 
     handleFloorSelection=(floor)=>{
         console.log('selected'+floor)
-        this.props.handleUserSelectsFloor(floor)
+        if(this.props.state.currentFloor!==this.props.state.usersSelectedFloor){
+            this.props.handleUserSelectsFloor(floor)
+        }
+       
     }
 
     componentDidUpdate(){
@@ -56,9 +59,10 @@ class FloorSelector extends Component {
     render(){
         return(
             <div className='floorSelectorContainer'>
-                <h2>FloorSelector</h2>
                 {this.renderMessage()}
-                {this.renderFloorNumbers()}
+                <div className='buttonContainer'>
+                    {this.renderFloorNumbers()}
+                </div>
             </div>
         )
     }

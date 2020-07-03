@@ -28,7 +28,7 @@ class FloorTracker extends Component {
     renderFloorNumbers(){
         console.log(this.props.state)
         
-        let allFloors=this.props.state.allFloors
+        /*let allFloors=this.props.state.allFloors
         let renderedFloors = allFloors.map(floor=>{
             if(floor===this.props.state.currentFloor){
                 return (
@@ -43,7 +43,8 @@ class FloorTracker extends Component {
             
         })
 
-        return renderedFloors
+        return renderedFloors*/
+
     }
 
 
@@ -51,8 +52,8 @@ class FloorTracker extends Component {
         if(this.props.state.currentFloor===this.props.state.usersSelectedFloor){
             return(
                 <>
-                <h3>At your floor!</h3> 
-                <button onClick={()=>window.location.reload(false)}>Ride again?</button>
+                <h3>This is your floor!</h3> 
+                <button className='rideAgainButton' onClick={()=>window.location.reload(false)}>Ride again.</button>
                 </>
             )
 
@@ -63,9 +64,15 @@ class FloorTracker extends Component {
 
         return(
             <div className='floorTrackerContainer'>
-                <h2>FloorTracker</h2>
                 {this.newRide()}
-                {this.renderFloorNumbers()}
+                {/*this.renderFloorNumbers()*/}
+                <div className='elevator'>
+                    <p className='floorTracker'>{this.props.state.currentFloor}</p>
+                    <div className='elevatorDoors'>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
             </div>
         )
     }

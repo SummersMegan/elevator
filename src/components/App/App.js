@@ -6,7 +6,7 @@ import FloorTracker from '../FloorTracker/FloorTracker'
 class App extends Component {
   
   state={
-    allFloors:[1,2,3,4,5,6,7,8,9,10,11,12],
+    allFloors:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
     usersSelectedFloor:null,
     selectedFloors:[],
     currentFloor:1,
@@ -52,9 +52,13 @@ class App extends Component {
     return(
       <>
       {/*this.restartRide()*/}
-      <h1>Elevator</h1>
-      <FloorTracker state={this.state} handleFloorChange={this.changeCurrentFloor} restartRide={this.restartRide}/>
-      <FloorSelector state={this.state} handleUserSelectsFloor={this.handleUserSelectsFloor}/>
+      <nav>
+        <h1>Elevator Ride</h1>
+      </nav>
+      <main>
+        <FloorTracker state={this.state} handleFloorChange={this.changeCurrentFloor} restartRide={this.restartRide}/>
+        <FloorSelector state={this.state} handleUserSelectsFloor={this.handleUserSelectsFloor}/>
+      </main>
       </>
     )
   }

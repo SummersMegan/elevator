@@ -1,11 +1,36 @@
-.floorSelectorContainer p{
-    border:1px solid blue;
+.floorSelectorContainer{
+    width:50%;
+    width:235px;
+    min-width: 235px;
+    position: relative;
+}
+
+.floorSelectorContainer h3{
+    height:23px;
+}
+
+.buttonContainer{
+    padding:20px;
+    text-align: center;
+    width:100%;
+    background-color: #989a9b;
+    position: absolute;
+    top:23px;
+}
+
+.buttonContainer p{
+    border:3px solid #37301e;
     display:inline-block;
-    width: 30px;
-    height:30px;
+    width: 35px;
+    height:35px;
+    padding:5px;
     border-radius: 50%;
+    text-align: center;
+    background-color: #dadedf;
+    color:#37301e;
+    margin:5px;
 }
 
 .selectedFloor{
-    background-color: grey;
+    background-color: #f6efe3 !important;
 }

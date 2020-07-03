@@ -1,9 +1,62 @@
-.floorTrackerContainer p{
-    border:1px solid red;
-    display:inline;
-    padding:10px;
+.floorTrackerContainer{
+    width:50%;
+    position: relative;
+    width:400px;
+    min-width: 400px;
 }
 
-.currentFloor{
-    background-color: yellow;
+.elevator{
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 50%;
+    margin-top: -152.5px;
+}
+
+
+.elevatorDoors{
+    width:300px;
+    height:300px;
+    border-left:20px solid #d2d2d2;
+    border-right:20px solid #d2d2d2;
+    border-top:20px solid #d2d2d2;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    top: 50%;
+    margin-top: -100px;
+    display: flex;
+}
+
+.elevatorDoors div{
+    border-left:1px solid #d2d2d2;
+    border-right:1px solid #d2d2d2;
+    background-image: linear-gradient(#a8a8a9, #818182);
+    width:50%;
+    text-align: end;
+}
+
+.floorTracker{
+    display:inline-block;
+    width:100px;
+    padding:5px;
+    border:10px solid #d2d2d2;
+    background-color: #2d2825;
+    color:#517d59;
+    font-size: 28px;
+    font-weight: bolder;
+    position: absolute;
+    top:20px;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.rideAgainButton{
+    margin-top:5px;
+    padding:10px;
+    cursor: pointer;
+    background-color: #37301e;
+    color:white;
 }
