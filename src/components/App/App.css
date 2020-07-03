@@ -25,5 +25,12 @@ main{
 footer{
   font-size: 12px;
   text-align: center;
-  margin:40px;
+}
+
+footer button{
+  padding:10px;
+  margin-bottom:5px;
+  background-color: #517d59;
+  color:white;
+  cursor: pointer;
 }

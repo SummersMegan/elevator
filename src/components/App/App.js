@@ -6,17 +6,41 @@ import ElevatorMusic from '../../assets/elevator-music.mp3'
 
 class App extends Component {
   
-  state={
+  /*state={
     allFloors:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
     usersSelectedFloor:null,
     selectedFloors:[],
     currentFloor:1,
+  }*/
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      allFloors:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+      usersSelectedFloor:null,
+      selectedFloors:[],
+      currentFloor:1,
+      play: false,
+      pause: true,
+    }
+    this.audio = new Audio(ElevatorMusic);
   }
 
-  componentDidMount(){
+  playMusic = () => {
+    this.setState({ play: true, pause: false })
+      this.audio.play();
+    }
+    
+  pauseMusic = () => {
+  this.setState({ play: false, pause: true })
+    this.audio.pause();
+  }
+
+
+  /*componentDidMount(){
     var audio = new Audio(ElevatorMusic);
     audio.play(); 
-  }
+  }*/
 
 
   /*componentDidUpdate(){
@@ -77,6 +101,19 @@ class App extends Component {
     
   }
 
+  renderMusicButtons=()=>{
+    if(this.state.play===true){
+      return(
+        <button className='musicButton' onClick={this.pauseMusic}>Pause Music</button>
+      )
+    } else{
+      return(
+        <button className='musicButton' onClick={this.playMusic}>Play Elevator Music</button>
+      )
+    }
+
+  }
+
   render(){
     return(
       <>
@@ -90,7 +127,9 @@ class App extends Component {
         <FloorSelector state={this.state} handleUserSelectsFloor={this.handleUserSelectsFloor}/>
       </main>
       <footer>
-        <p>Royalty Free Elevator Music from Bensound</p>
+        {this.renderMusicButtons()}
+        <p>Royalty Free Music from Bensound</p>
+
       </footer>
       </>
     )

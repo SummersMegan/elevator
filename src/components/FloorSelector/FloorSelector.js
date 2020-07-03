@@ -11,11 +11,11 @@ class FloorSelector extends Component {
             
             if(this.props.state.selectedFloors.includes(floor)){
                 return (
-                    <p className='selectedFloor' key={floor} onClick={()=>this.handleFloorSelection(floor)}>{floor}</p>
+                    <button className='selectedFloor' key={floor} onClick={()=>this.handleFloorSelection(floor)}>{floor}</button>
                 )
             } else {
                 return (
-                    <p key={floor} onClick={()=>this.handleFloorSelection(floor)}>{floor}</p>
+                    <button key={floor} onClick={()=>this.handleFloorSelection(floor)}>{floor}</button>
                 )
             }
             
