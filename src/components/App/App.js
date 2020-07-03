@@ -18,12 +18,31 @@ class App extends Component {
     audio.play(); 
   }
 
+
   /*componentDidUpdate(){
     if(this.state.currentFloor===this.state.usersSelectedFloor){
       alert("You've reached your floor!")
       //this.restartRide()
       window.location.reload(false);
   }
+  }*/
+
+  /*handleFloorChange=()=>{
+    
+      if(this.state.currentFloor+1<=this.state.usersSelectedFloor){
+
+        setTimeout(()=>{ 
+        
+        let newFloor = this.state.currentFloor+1
+        
+          this.setState({
+            currentFloor:newFloor
+          })
+        }, 2000)
+      } else{
+        console.log('at your floor')
+      }
+
   }*/
 
   changeCurrentFloor=(newFloor)=>{
@@ -61,6 +80,7 @@ class App extends Component {
   render(){
     return(
       <>
+      {/*this.handleFloorChange()*/}
       {/*this.restartRide()*/}
       <nav>
         <h1>Elevator Ride</h1>
@@ -69,6 +89,9 @@ class App extends Component {
         <FloorTracker state={this.state} handleFloorChange={this.changeCurrentFloor} restartRide={this.restartRide}/>
         <FloorSelector state={this.state} handleUserSelectsFloor={this.handleUserSelectsFloor}/>
       </main>
+      <footer>
+        <p>Royalty Free Elevator Music from Bensound</p>
+      </footer>
       </>
     )
   }

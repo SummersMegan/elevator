@@ -3,51 +3,46 @@ import './FloorTracker.css'
 
 class FloorTracker extends Component {
   
+    //prevents re-render when additional buttons are selected
+    shouldComponentUpdate(nextProps, nextState) {
+        if (nextProps.state.selectedFloors.length===(this.props.state.selectedFloors.length+1) && nextProps.state.selectedFloors.length>1) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+
     //for initial floor change
-    componentDidMount(){
+    /*componentDidMount(){
         this.handleFloorChange()
-    }
+    }*/
 
     //for every proceeding floor change
-    componentDidUpdate(){
-        this.handleFloorChange()
-    }
+    //componentDidUpdate(prevProps, prevState){
+        
+        /*if(prevProps.state.selectedFloors!==this.props.state.selectedFloors || prevProps.state.usersSelectedFloor!==this.props.state.usersSelectedFloor){
+            this.handleFloorChange()
+        }*/
+
+        //if(this.props.state.currentFloor<this.props.state.usersSelectedFloor){
+           // this.handleFloorChange()
+        //}
+        
+   // }
 
     handleFloorChange=()=>{
 
         //console.log(this.props.state.usersSelectedFloor)
-    
-        if(this.props.state.usersSelectedFloor && this.props.state.currentFloor!==this.props.state.usersSelectedFloor){
-            console.log('handled floor change!')
+        console.log(this.props.state.usersSelectedFloor,this.props.state.currentFloor) 
+        
+        if(/*this.props.state.usersSelectedFloor &&*/ /*this.props.state.currentFloor+1<=this.props.state.usersSelectedFloor*/ this.props.state.currentFloor+1 <= this.props.state.usersSelectedFloor){
+            //console.log('handled floor change!')
             setTimeout(()=>{ 
                 this.props.handleFloorChange(this.props.state.currentFloor+1)
             }, 1000);
         }
     } 
     
-    renderFloorNumbers(){
-        //console.log(this.props.state)
-        
-        /*let allFloors=this.props.state.allFloors
-        let renderedFloors = allFloors.map(floor=>{
-            if(floor===this.props.state.currentFloor){
-                return (
-                    <p key={floor} className='currentFloor'>{floor}</p>
-                )
-            } else{
-                return (
-                    <p key={floor}>{floor}</p>
-                )
-            }
-        
-            
-        })
-
-        return renderedFloors*/
-
-    }
-
-
     newRide=()=>{
         if(this.props.state.currentFloor===this.props.state.usersSelectedFloor){
             
@@ -65,8 +60,8 @@ class FloorTracker extends Component {
 
         return(
             <div className='floorTrackerContainer'>
+                {this.handleFloorChange()}
                 {this.newRide()}
-                {/*this.renderFloorNumbers()*/}
                 <div className='elevator'>
                     <p className='floorTracker'>{this.props.state.currentFloor}</p>
                     <div className='elevatorDoors'>

@@ -21,3 +21,9 @@ main{
   display:flex;
   justify-content: center;
 }
+
+footer{
+  font-size: 12px;
+  text-align: center;
+  margin:40px;
+}
