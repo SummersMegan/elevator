@@ -17,7 +17,7 @@ nav{
 main{
   margin:20px;
   border-bottom:5px solid black;
-  height:500px;
+  height:460px;
   display:flex;
   justify-content: center;
 }
